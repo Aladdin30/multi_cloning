@@ -3,7 +3,7 @@ import gc
 import torch
 from pydub import AudioSegment  
 from TTS.api import TTS 
-
+from googletrans import Translator
 
 print(torch.cuda.is_available())  # to check if cuda available or not; will return True if available
 
