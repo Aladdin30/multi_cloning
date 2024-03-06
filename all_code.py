@@ -32,6 +32,14 @@ def diarizer(result,audio,numper_of_speaker):
     result = whisperx.assign_word_speakers(diarize_segments, result)
     unique_speakers_array=diarize_segments.speaker.unique()
     speaker_name = unique_speakers_array.tolist()
+    #for multi language use tis code 
+    # speaker_text_pairs=[]
+    # for segment in result["segments"]:
+    #     translator = Translator()
+    #     translated_text = translator.translate(segment["text"], dest="ar")
+    #     speaker_text_pair = (segment["speaker"], translated_text.text)
+    #     speaker_text_pairs.append(speaker_text_pair)
+    # Print the result
     speaker_text_pairs = [(segment["speaker"], segment["text"]) for segment in result["segments"]]
     return speaker_text_pairs,speaker_name
 
