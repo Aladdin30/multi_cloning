@@ -2,3 +2,4 @@ TTS
 pydub
 torch
 git+https://github.com/m-bain/whisperx.git
+googletrans==4.0.0-rc1
